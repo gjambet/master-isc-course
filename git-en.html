@@ -26,15 +26,106 @@
                 <h1>Meta course</h1>
             </section>
             <section>
-                <h1>about me</h1>
+                <h3>about the course</h3>
+                <p>https://github.com/gjambet/maven-course</p>
+                <p>Send your pull request ;)</p>
+                <aside class="notes">
+                    Evaluation ?
+                </aside>
             </section>
             <section>
-                <h1>about the course</h1>
-            </section>
-            <section>
-                <h1>about your evaluation</h1>
+                <p>Guillaume Jambet</p>
+                <p><a href="http://twitter.com/gjambet">@gjambet</a> / guillaume.jambet@gmail.com</p>
             </section>
         </section>
+
+        <section>
+            <section>
+                <h1>Svn like commands</h1>
+            </section>
+            <section>
+                <h3>A partir d'un repository existant</h3>
+                <pre>
+                    <code data-trim>
+                        git clone https://github.com/gjambet/maven-course.git
+
+                        git clone git@github.com:gjambet/maven-course.git
+                        git clone ./existing-repo ./new-repo
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>change every thing and ...</h3>
+                <pre>
+                    <code data-trim>
+                        git commit
+                        git push
+                    </code>
+                </pre>
+                <p>that's it !</p>
+            </section>
+            <section>
+                <h3>w8 ! commit AND push ?</h3>
+                <p>git dissocie complétement la creation d'un increment de code (git commit) de celle de sa publication (git push)</p>
+            </section>
+            <section>
+            <h3>mais alors, je peux créer un repo local ?</h3>
+                <pre>
+                    <code data-trim>
+                        cd to your-project-root
+                        git init
+                        git add .
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>et consulter mon historique ? </h3>
+                <pre>
+                    <code data-trim>
+                        git log
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>et consulter les modifications </h3>
+                <pre>
+                    <code data-trim>
+                        git diff
+                        git diff $commit-id1 $commit-id2
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>et supprimer toute mes modifications depuis le dernier commit ?</h3>
+                <pre>
+                    <code data-trim>
+                        git reset --hard
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>Et le connecter/déposer à un server distant ?</h3>
+                <pre>
+                    <code data-trim>
+                        git remote add origin git@github.com:gjambet/your-project.git
+                        git push -u origin master
+                    </code>
+                </pre>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1>un nouveau svn ... mais pas que !</h1>
+            </section>
+            <section>
+                <h1>git pull</h1>
+            </section>
+            <section>
+                <h1>git fetch</h1>
+            </section>
+        </section>
+
 
     </div>
 
