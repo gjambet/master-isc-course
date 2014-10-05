@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Reveal.js 3 Slide Demo</title>
+    <title>Git Course</title>
     <link rel="stylesheet" href="css/reveal.min.css">
     <link rel="stylesheet" href="css/theme/default.css" id="theme">
 
@@ -41,7 +41,7 @@
 
         <section>
             <section>
-                <h1>Svn like commands</h1>
+                <h1>Basic commands</h1>
             </section>
             <section>
                 <h3>A partir d'un repository existant</h3>
@@ -69,7 +69,72 @@
                 <p>git dissocie complétement la creation d'un increment de code (git commit) de celle de sa publication (git push)</p>
             </section>
             <section>
-            <h3>mais alors, je peux créer un repo local ?</h3>
+                <h1>git pull</h1>
+            </section>
+            <section>
+                <h3>Consulter mon historique</h3>
+                <pre>
+                    <code data-trim>
+                        git log
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>Etat de ma copie de travail</h3>
+                <pre>
+                    <code data-trim>
+                        git status
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>Consulter les modifications </h3>
+                <pre>
+                    <code data-trim>
+                        git diff
+                        git diff $commit-id1 $commit-id2
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>Supprimer toute mes modifications depuis le dernier commit ?</h3>
+                <pre>
+                    <code data-trim>
+                        git reset --hard
+                    </code>
+                </pre>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1>Advanced commands</h1>
+            </section>
+            <section>
+                <h1>git stash</h1>
+                <code data-trim>
+                    git stash
+                    git stash list
+                    git stash pop
+                </code>
+            </section>
+            <section>
+                <h1>git fetch</h1>
+            </section>
+            <section>
+                <h1>git rebase</h1>
+            </section>
+            <section>
+                <h1>git pull --rebase</h1>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1>Branches</h1>
+            </section>
+            <section>
+                <h3>Ou Créer un repo local</h3>
                 <pre>
                     <code data-trim>
                         cd to your-project-root
@@ -79,36 +144,12 @@
                 </pre>
             </section>
             <section>
-                <h3>et consulter mon historique ? </h3>
+                <h3>merge</h3>
                 <pre>
                     <code data-trim>
-                        git log
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <h3>et consulter les modifications </h3>
-                <pre>
-                    <code data-trim>
-                        git diff
-                        git diff $commit-id1 $commit-id2
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <h3>et supprimer toute mes modifications depuis le dernier commit ?</h3>
-                <pre>
-                    <code data-trim>
-                        git reset --hard
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <h3>Et le connecter/déposer à un server distant ?</h3>
-                <pre>
-                    <code data-trim>
-                        git remote add origin git@github.com:gjambet/your-project.git
-                        git push -u origin master
+                        cd to your-project-root
+                        git init
+                        git add .
                     </code>
                 </pre>
             </section>
@@ -116,16 +157,93 @@
 
         <section>
             <section>
-                <h1>un nouveau svn ... mais pas que !</h1>
+                <h1>Miscellaneous</h1>
             </section>
             <section>
-                <h1>git pull</h1>
+                <h3>Create a local repository...</h3>
+                <pre>
+                    <code data-trim>
+                        cd to your-project-root
+                        git init
+                        git add .
+                    </code>
+                </pre>
             </section>
             <section>
-                <h1>git fetch</h1>
+                <h3>... and link it to a distant one</h3>
+                <pre>
+                    <code data-trim>
+                        git remote add origin git@github.com:gjambet/your-project.git
+                        git push -u origin master
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h1>Configuration schema</h1>
             </section>
         </section>
 
+        <section>
+            <section>
+                <h1>workflows</h1>
+            </section>
+            <section>
+                <h1>svn like</h1>
+            </section>
+            <section>
+                <h1>git-flow</h1>
+            </section>
+            <section>
+                <h1>open source</h1>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1>Best practices</h1>
+            </section>
+            <section>
+                <h1>Your fork is your playground</h1>
+            </section>
+            <section>
+                <h1>Always work in branch</h1>
+            </section>
+            <section>
+                <h1>when to rebase ? when to merge ?</h1>
+            </section>
+            <section>
+                <h1>rewrite history</h1>
+                <p>code should be clean, commits also !</p>
+                <p>commit granularity, comments... </p>
+            </section>
+            <section>
+                <h1>pull request are great !</h1>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1>Wizard's Spellbook</h1>
+            </section>
+            <section>
+                <h1>Rewritting history</h1>
+                <h3>forgot something in last commit ? </h3>
+                <code data-trim>
+                    git commit --amend
+                </code>
+            </section>
+            <section>
+                <h1>my history is a mess</h1>
+                <h3>forgot something in last commit ? </h3>
+                <code data-trim>
+                    git rebase -i HEAD~4 (4 last ccmmits)
+                    pick squash squas squash
+                </code>
+            </section>
+            <section>
+                <h1>reflog</h1>
+            </section>
+        </section>
 
     </div>
 
