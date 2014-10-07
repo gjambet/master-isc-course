@@ -48,7 +48,10 @@
                 <pre>
                     <code data-trim>
                         git clone https://github.com/gjambet/maven-course.git
-
+                    </code>
+                </pre>
+                <pre>
+                    <code data-trim>
                         git clone git@github.com:gjambet/maven-course.git
                         git clone ./existing-repo ./new-repo
                     </code>
@@ -65,14 +68,14 @@
                 <p>that's it !</p>
             </section>
             <section>
-                <h3>w8 ! commit AND push ?</h3>
-                <p>git dissocie complétement la creation d'un increment de code (git commit) de celle de sa publication (git push)</p>
+                <h3>w8 ! commit then push ?</h3>
+                <p>git completely dissociate creating a code increment (git commit) from publishing it (git push)</p>
             </section>
             <section>
                 <h1>git pull</h1>
             </section>
             <section>
-                <h3>Consulter mon historique</h3>
+                <h3>quick look at the history</h3>
                 <pre>
                     <code data-trim>
                         git log
@@ -80,7 +83,7 @@
                 </pre>
             </section>
             <section>
-                <h3>Etat de ma copie de travail</h3>
+                <h3>worcking copy condition</h3>
                 <pre>
                     <code data-trim>
                         git status
@@ -88,16 +91,17 @@
                 </pre>
             </section>
             <section>
-                <h3>Consulter les modifications </h3>
+                <h3>comparing </h3>
                 <pre>
                     <code data-trim>
                         git diff
                         git diff $commit-id1 $commit-id2
+                        git diff branch1 branch2
                     </code>
                 </pre>
             </section>
             <section>
-                <h3>Supprimer toute mes modifications depuis le dernier commit ?</h3>
+                <h3>Supress all modification since last commit ?</h3>
                 <pre>
                     <code data-trim>
                         git reset --hard
@@ -109,14 +113,18 @@
         <section>
             <section>
                 <h1>Advanced commands</h1>
+                <aside class="notes">
+					notion d index
+                </aside>
             </section>
             <section>
                 <h1>git stash</h1>
-                <code data-trim>
-                    git stash
-                    git stash list
-                    git stash pop
-                </code>
+				<ul>
+						<li>git stash</li>
+						<li>git stash list</li>
+						<li>git stash pop</li>
+						<li>Or here</li>
+					</ul>
             </section>
             <section>
                 <h1>git fetch</h1>
@@ -134,22 +142,34 @@
                 <h1>Branches</h1>
             </section>
             <section>
-                <h3>Ou Créer un repo local</h3>
+                <h3>Listing all local branches</h3>
                 <pre>
                     <code data-trim>
-                        cd to your-project-root
-                        git init
-                        git add .
+                        git branch .
                     </code>
                 </pre>
             </section>
             <section>
-                <h3>merge</h3>
+                <h3>creating a new local branch</h3>
                 <pre>
                     <code data-trim>
-                        cd to your-project-root
-                        git init
-                        git add .
+                        git checkout -b feature/add-international-customer-data
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>push it to remote repository</h3>
+                <pre>
+                    <code data-trim>
+                        git push -u origin feature/add-international-customer-data
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>deleting local branch</h3>
+                <pre>
+                    <code data-trim>
+                        git branch -D feature/add-international-customer-data
                     </code>
                 </pre>
             </section>
@@ -179,7 +199,17 @@
                 </pre>
             </section>
             <section>
-                <h1>Configuration schema</h1>
+                <h3>Configuration</h3>
+				<ul>
+					<li>git config user.name "John Doe"</li>
+					<li>git config --global user.name "John Doe"</li>
+					<li>git config --system user.name "John Doe"</li>
+				</ul>
+                <aside class="notes">
+					project: Project configs are only available for the current project and stored in .git/config in the project's directory.
+					global: Global configs are available for all projects for the current user and stored in ~/.gitconfig.
+					system: System configs are available for all the users/projects and stored in /etc/gitconfig.
+                </aside>
             </section>
         </section>
 
