@@ -61,12 +61,38 @@
             </section>
             <section>
                 <h1>WTF is Dependency Injection</h1>
+            </section>
+            <section>
                 <h1>Injection Principle</h1>
+                @Component
+                @Autowired Vs @Resource Vs @Bean Vs @Inject
+            </section>
+            <section>
                 <h1>Singleton Vs Prototype</h1>
+                @Scope("prototype")
+            </section>
+            <section>
+                <h1>Named beans</h1>
+                @Qualifier
+            </section>
+            <section>
+                <h1>Bean Life cycle</h1>
+                @PostConstruct
+                @PreDestroy
+            </section>
+            <section>
                 <h1>Injection point</h1>
-                <h1>Life cycle @PostConstruct and @PreDestroy</h1>
-                <h1>ApplicationContext</h1>
-                <h1>Service Architecture Bias</h1>
+                Constructor Vs Field Vs Setter
+                @Required
+            </section>
+            <section>
+                <h1></h1>
+                @Service
+                <p>Indicates that an annotated class is a "Service", originally defined by Domain-Driven Design (Evans, 2003) as "an operation offered as an interface that stands alone in the model, with no encapsulated state."</p>
+            </section>
+            <section>
+                <h1></h1>
+                @Configuration
             </section>
         </section>
 
@@ -74,17 +100,41 @@
             <section>
                 <h1>Testing</h1>
             </section>
+            <section>
+                <h1>Mockito</h1>
+
+                <dependency>
+                    <groupId>org.mockito</groupId>
+                    <artifactId>mockito-core</artifactId>
+                    <version>1.10.19</version>
+                </dependency>
+
+            </section>
         </section>
 
         <section>
             <section>
                 <h1>spring-web</h1>
             </section>
+            <section>
+                <h1>More Scopes</h1>
+                request – Return a single bean instance per HTTP request
+                session – Return a single bean instance per HTTP session
+                globalSession – Return a single bean instance per web application
+            </section>
         </section>
 
         <section>
             <section>
                 <h1>spring-data</h1>
+            </section>
+            <section>
+                <h1>spring-data</h1>
+                @Transactional
+            </section>
+            <section>
+                <h1>spring-data</h1>
+                @Repository
             </section>
         </section>
 
