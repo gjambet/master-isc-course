@@ -23,21 +23,29 @@
             </section>
             <section>
                 <h2>Guillaume Jambet</h2>
+
                 <p><a href="http://twitter.com/gjambet">@gjambet</a> / guillaume.jambet@gmail.com</p>
-                <p><a target="_blank" href="https://github.com/gjambet/master-isc-course">https://github.com/gjambet/master-isc-course</a></p>
+
+                <p><a target="_blank" href="https://github.com/gjambet/master-isc-course">https://github.com/gjambet/master-isc-course</a>
+                </p>
             </section>
             <section>
                 <h2>Reveal.js</h2>
+
                 <p>Discover <a target="_blank" href="http://lab.hakim.se/reveal-js/#/">Showcase</a></p>
-                <p>Learn <a target="_blank" href="http://htmlcheats.com/reveal-js/reveal-js-tutorial-reveal-js-for-beginners/">Tutorial</a></p>
+
+                <p>Learn <a target="_blank"
+                            href="http://htmlcheats.com/reveal-js/reveal-js-tutorial-reveal-js-for-beginners/">Tutorial</a>
+                </p>
+
                 <p>Contribute <a target="_blank" href="https://github.com/hakimel/reveal.js">Github</a></p>
             </section>
         </section>
 
-         <section>
-             <section>
-                 <h1>Spring boot</h1>
-             </section>
+        <section>
+            <section>
+                <h1>Spring boot</h1>
+            </section>
             <section>
                 <h1>Setting up maven project</h1>
             </section>
@@ -49,10 +57,10 @@
                 <h2>plugin</h2>
                 <img src="resources/spring/maven-plugin.png">
             </section>
-             <section>
-                 <h2>starting spring</h2>
-                 <img src="resources/spring/hello-world-controller.png">
-             </section>
+            <section>
+                <h2>starting spring</h2>
+                <img src="resources/spring/hello-world-controller.png">
+            </section>
         </section>
 
         <section>
@@ -61,11 +69,59 @@
             </section>
             <section>
                 <h1>WTF is Dependency Injection</h1>
+                @Component
+                @Resource
             </section>
             <section>
-                <h1>Injection Principle</h1>
-                @Component
-                @Autowired Vs @Resource Vs @Bean Vs @Inject
+                <h1>@Autowired Vs @Resource Vs @Bean Vs @Inject</h1>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Annotation</th>
+                        <th>Package</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>@Resource</td>
+                        <td>javax.annotation</td>
+                    </tr>
+                    <tr>
+                        <td>@Inject</td>
+                        <td>javax.annotation</td>
+                    </tr>
+                    <tr>
+                        <td>@Qualifier</td>
+                        <td>javax.inject</td>
+                    </tr>
+                    <tr>
+                        <td>@Autowired</td>
+                        <td>org.springframework.bean.factory</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <aside class="notes">
+
+                    @Autowired and @Inject
+                    1.Matches by Type
+                    2.Restricts by Qualifiers
+                    3.Matches by Name
+                    @Resource
+
+                    1.Matches by Name
+                    2.Matches by Type
+                    3.Restricts by Qualifiers (ignored if match is found by name)
+
+                    http://blogs.sourceallies.com/2011/08/spring-injection-with-resource-and-autowired/
+                </aside>
+
+            </section>
+            <section>
+                <h1>Best Practices</h1>
+                1.Explicitly name your component [@Component(“beanName”)]
+                2.Use ‘@Resource’ with the ‘name’ attribute [@Resource(name=”beanName”)]
+                3.Scan specific packages for components [context:component-scan base-package=”com.sourceallies.person”]
             </section>
             <section>
                 <h1>Singleton Vs Prototype</h1>
@@ -88,7 +144,9 @@
             <section>
                 <h1></h1>
                 @Service
-                <p>Indicates that an annotated class is a "Service", originally defined by Domain-Driven Design (Evans, 2003) as "an operation offered as an interface that stands alone in the model, with no encapsulated state."</p>
+                <p>Indicates that an annotated class is a "Service", originally defined by Domain-Driven Design (Evans,
+                    2003) as "an operation offered as an interface that stands alone in the model, with no encapsulated
+                    state."</p>
             </section>
             <section>
                 <h1></h1>
@@ -115,7 +173,32 @@
         <section>
             <section>
                 <h1>spring-web</h1>
+
+                 Dispatcher Servlet
+
+                <aside class="notes">
+                    http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/mvc.html
+                </aside>
+
             </section>
+            <section>
+                <h1>Basics</h1>
+                @Controller
+                @RequestMapping
+                @PathVariable
+
+                <aside class="notes">
+                    @RequestMapping(path = "/{day}", method = RequestMethod.GET)
+                    public Map<String, Appointment> getForDay(@PathVariable @DateTimeFormat(iso=ISO.DATE) Date day, Model model) {
+                    return appointmentBook.getAppointmentsForDay(day);
+                    }
+                </aside>
+
+            </section>
+
+
+
+
             <section>
                 <h1>More Scopes</h1>
                 request – Return a single bean instance per HTTP request
@@ -137,7 +220,6 @@
                 @Repository
             </section>
         </section>
-
 
 
     </div>
